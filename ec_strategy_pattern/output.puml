@@ -1,0 +1,48 @@
+@startuml
+skinparam classAttributeIconSize 0
+class BarkSmall{
++ barkSound() : void
+}
+BarkSmall ..|> BarkBehavior
+class DogHusky{
+DogHusky(color : String, age : Integer, pound : Double)
++ showSalePrice() : void
+}
+DogHusky --|> Dog
+class BarkLarge{
++ barkSound() : void
+}
+BarkLarge ..|> BarkBehavior
+class DogSellingStore{
++ {static} main(args : String[]) : void
+}
+class Dog{
+- barkBehavior : BarkBehavior
+- color : String
+- pound : Double
+- age : Integer
+- variety : String
+Dog(variety : String, color : String, age : Integer, pound : Double)
+# setBarkBehavior(barkBehavior : BarkBehavior) : void
++ performBark() : void
++ display() : void
++ {abstract} showSalePrice() : void
+- getColor() : String
+- getPound() : Double
+- getAge() : Integer
+- getVariety() : String
+- setColor(color : String) : void
+- setPound(pound : Double) : void
+- setAge(age : Integer) : void
+- setVariety(variety : String) : void
+}
+class DogSmallGermanShepherd{
+DogSmallGermanShepherd(color : String, age : Integer, pound : Double)
++ showSalePrice() : void
+}
+DogSmallGermanShepherd --|> Dog
+Dog--"- barkBehavior" BarkBehavior
+interface BarkBehavior{
++ barkSound() : void
+}
+@enduml
