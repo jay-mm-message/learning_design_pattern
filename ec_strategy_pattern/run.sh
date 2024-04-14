@@ -1,7 +1,7 @@
 
 
-if [ -e "log.txt" ]; then
-  rm log.txt
+if [ -e "info.log" ]; then
+  rm info.log
 fi
 
 javac *.java
